@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Un minijuego al día</title>
+    <title>Sudoku!</title>
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -32,13 +32,14 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Materialize CSS -->
+    <link rel="stylesheet" href="/materialize.min.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Materialize Icons -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="/materialize.min.css" />
-    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <nav class="blue darken-2 fiex-top">
@@ -66,42 +67,30 @@
         </ul>
       </div>
     </nav>
-
     <div class="container">
-      <h2 class="center-align">¡Bienvenido a Un Minijuego al Día!</h2>
-      <p>
-        Aquí, la diversión nunca se detiene. Cada día, te presentamos
-        <span class="highlighted-text">un minijuego único</span> y diferente
-        para desafiar tus habilidades y entretenerte. Ya sea un rompecabezas, un
-        juego de estrategia o cualquier otro tipo, siempre hay algo nuevo
-        esperándote. Pero aquí está el giro: ¡solo tienes 24 horas para
-        enfrentarte a ese juego! Una vez que el tiempo se acabe, un nuevo
-        minijuego tomará su lugar, brindándote una nueva oportunidad de
-        diversión.
-      </p>
-      <p>
-        <span class="highlighted-text"
-          >¿Lograste completar el desafío del día?</span
-        >
-        ¡Genial! No olvides compartir tu logro con amigos y familiares. De esta
-        manera, no solo podrás presumir de tus habilidades, sino que también
-        podrás competir con ellos. ¿Quién será el más rápido? ¿Quién podrá
-        superar todos los desafíos? Solo hay una forma de descubrirlo.
-      </p>
-      <p>
-        Así que, si buscas una pequeña dosis de diversión diaria que
-        <span class="highlighted-text">solo te llevará un par de minutos</span>,
-        estás en el lugar correcto. ¡Prepárate para el desafío y demuestra de
-        qué estás hecho!
-      </p>
-      <div class="post-it center-align">
-        Dentro de <span class="highlighted-text" id="countdown"></span> se
-        terminará el tiempo para completar el minijuego de hoy.
+      <div class="row center-align">
+        <div class="col s12 m12 l12">
+          <div class="section">
+            <button id="reset-button" class="btn grey darken-2">Reset</button>
+            <button id="start-button" class="btn blue darken-2">
+              Resuelve
+            </button>
+          </div>
+          <div id="sudoku-grid" class="section"></div>
+        </div>
+        <!--div class="col s12 m8 l4">
+          <h2>Registro de acciones</h2>
+          <div id="action-log" class="card-panel">
+            <ul class="collection"></ul>
+          </div>
+        </div-->
       </div>
     </div>
-
     <!-- Materialize JS -->
     <script src="/materialize.min.js"></script>
-    <script src="/app.js"></script>
+    <script src="Player.js"></script>
+    <script src="Sudoku.js"></script>
+    <script src="app.js"></script>
+    <script src="log.js"></script>
   </body>
 </html>

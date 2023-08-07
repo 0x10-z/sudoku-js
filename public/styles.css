@@ -6,92 +6,42 @@ html {
   background: #f0f0f0;
 }
 
-#sudoku-grid {
-  margin-top: 60px; /* Margen superior de 20px para el sudoku-grid */
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-}
-
-.cell {
-  border: 1px solid #ddd;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Estilos adicionales para las celdas readonly */
-.cell[readonly] {
-  background-color: #f7f7f7; /* Color de fondo gris muy sutil */
-}
-
-.bottom-border {
-  border-bottom: 3px solid #000;
-}
-
-.right-border {
-  border-right: 3px solid #000;
-}
-
-.top-border {
-  border-top: 3px solid #000;
-}
-
-.left-border {
-  border-left: 3px solid #000;
-}
-
-#action-log li {
-  margin-bottom: 10px;
-}
-
-/* Estilos adicionales para el botón y el contenedor de alertas */
-#start-button-container {
-  align-self: flex-start;
-}
-
-#start-button {
-  min-width: 140px;
-}
-
-#alert-container {
-  width: 200px;
-  height: 40px;
-}
-
-/* Estilos adicionales para mejorar la apariencia */
-#page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.brand-logo {
+  display: inline-block;
   height: 100%;
 }
 
-#main-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.brand-logo > img {
+  vertical-align: sub;
 }
 
-#action-log {
-  max-height: 600px; /* Nueva propiedad para limitar la altura */
-  min-height: 300px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Agregamos scroll vertical cuando el contenido excede la altura máxima */
+.highlighted-text {
+  background-color: black;
+  color: white;
+  padding: 2px 5px; /* Añade un poco de espacio alrededor del texto */
+  border-radius: 3px; /* Bordes redondeados para un aspecto más suave */
 }
 
-/* Estilos para dispositivos más pequeños */
-@media (max-width: 992px) {
-  #main-container {
-    justify-content: center;
+.container {
+  max-width: 800px;
+  font-size: 17px;
+}
+
+.post-it {
+  background-color: #ffeb3b; /* Color amarillo post-it */
+  padding: 20px;
+  width: 300px;
+  transform: rotate(-7deg); /* Inclinación */
+  border: 1px solid #ffc107; /* Borde naranja claro */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+  font-style: italic; /* Estilo de letra cursiva */
+  position: relative; /* Posicionamiento relativo para ajustes */
+  margin: 50px auto; /* Centra horizontalmente y añade un margen superior de 50px */
+}
+
+/* Oculta el texto "Un minijuego al día" en pantallas menores a 993px */
+@media only screen and (max-width: 992px) {
+  .navbar-text {
+    display: none;
   }
 }

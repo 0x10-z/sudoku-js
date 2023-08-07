@@ -228,9 +228,6 @@ class Sudoku {
   }
 
   checkResult() {
-    const alertContainer = document.getElementById("alert-container");
-    alertContainer.innerHTML = "";
-
     if (this.isComplete) {
       let isValid = true;
       for (let i = 0; i < this.size; i++) {
@@ -242,21 +239,25 @@ class Sudoku {
         }
       }
 
-      const alertElement = document.createElement("div");
-      alertElement.className = `alert ${
-        isValid ? "alert-success" : "alert-danger"
-      }`;
-      alertElement.role = "alert";
-      alertElement.innerText = isValid
-        ? "Tablero correcto"
-        : "Tablero incorrecto";
-      alertContainer.appendChild(alertElement);
+      if (isValid) {
+        M.toast({
+          html: "Tablero correcto",
+          classes: "green lighten-1",
+          displayLength: 3000,
+        });
+      } else {
+        M.toast({
+          html: "Tablero incorrecto",
+          classes: "red darken-1",
+          displayLength: 3000,
+        });
+      }
     } else {
-      const alertElement = document.createElement("div");
-      alertElement.className = "alert alert-warning";
-      alertElement.role = "alert";
-      alertElement.innerText = "El tablero no está completo";
-      alertContainer.appendChild(alertElement);
+      M.toast({
+        html: "El tablero no está completo",
+        classes: "yellow darken-1",
+        displayLength: 3000,
+      });
     }
   }
 }

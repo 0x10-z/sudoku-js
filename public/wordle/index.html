@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle!</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="/materialize.min.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Materialize Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="blue darken-2 fiex-top">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo left">
+          <img
+            src="data:image/svg+xml,<svg width='40' height='40' xmlns='http://www.w3.org/2000/svg'><rect width='40' height='40' fill='white' rx='8' ry='8'/><text x='50%' y='50%' dy='.3em' fill='%23007BFF' font-family='Arial' font-size='24' text-anchor='middle'>M</text></svg>"
+            alt="Logo M"
+            class="mr-2 navbar-logo"
+          />
+          <span class="navbar-text">Un minijuego al día</span>
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/sudoku">Sudoku</a></li>
+          <li><a href="/wordle">Wordle</a></li>
+          <!-- Agrega más enlaces según tus juegos -->
+        </ul>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="/sudoku">Sudoku</a></li>
+          <li><a href="/wordle">Wordle</a></li>
+          <!-- Agrega más enlaces según tus juegos -->
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Wordle Game</h1>
+      <div class="word-container">
+        <div class="word-letter">_</div>
+        <div class="word-letter">_</div>
+        <div class="word-letter">_</div>
+        <div class="word-letter">_</div>
+        <div class="word-letter">_</div>
+      </div>
+      <input type="text" id="guess-input" placeholder="Enter your guess" />
+      <button id="check-button">Check</button>
+    </div>
+    <!-- Materialize JS -->
+    <script src="/materialize.min.js"></script>
+    <script src="Player.js"></script>
+    <script src="Sudoku.js"></script>
+    <script src="app.js"></script>
+    <script src="log.js"></script>
+  </body>
+</html>

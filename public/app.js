@@ -1,20 +1,24 @@
-// Crea una nueva instancia de Sudoku
-const sudoku = new Sudoku(9, true);
-sudoku.drawGrid();
+document.addEventListener("DOMContentLoaded", function () {
+  function updateCountdown() {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    const timeDiff = midnight - now;
 
-function startGame() {
-  const player = new Player(true, sudoku);
-  player.play();
-}
+    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", startGame);
+    document.getElementById(
+      "countdown"
+    ).textContent = `${hours}h ${minutes}m ${seconds}s`;
+  }
 
-// Obtén la referencia al botón de reset
-const resetButton = document.getElementById("reset-button");
+  updateCountdown();
+  setInterval(updateCountdown, 1000); // Actualiza cada segundo
+});
 
-resetButton.addEventListener("click", () => {
-  sudoku.createGrid(true);
-  sudoku.checkResult();
-  sudoku.drawGrid();
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".sidenav");
+  var instances = M.Sidenav.init(elems);
 });
